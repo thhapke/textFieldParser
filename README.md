@@ -32,8 +32,32 @@ Default: ['!', '~', 'not', 'Not', 'NOT']
 * text = "Not Mercedes, Renault, Citroen, Peugeaut, 'Rolls Royce'" 
 * value_list = ['Mercedes', 'Audi', 'VW', 'Skoda', 'Renault', 'Citroen', 'Peugeot', 'Rolls Royce']
 
--> ['Audi', 'VW', 'Skoda', 'Peugeot'] 
+-> `['Audi', 'VW', 'Skoda', 'Peugeot'] `
  
+## read_value_lists
+Reads a 'outer_sep'-separated list of a mapping with 'inner-sep' separated list and returns a dictionary with the 
+map as key and a list as value. 
+
+def read_value_lists(text,value_list=None,inner_sep = ',',outer_sep = ';',map_sep=':')`
+
+### Arguments 
+
+* **text** -string- from textfield that will be parsed
+* **inner_sep** -char- element separator of value list 
+* **outer_sep** -char- list separator for the lists
+* **map_sep** -char- separates map from list
+
+### Return
+* Dictionary of the keys and lists.
+
+### Example
+text = "'Mercedes':expensive, German, respectable; Audi:'sportive, German, technology-advanced'; \
+                    VW : 'people', 'solid', No1; Citroen:cool, Fantomas, CV2, elastic ; 'Rolls Rocye': royal,  \
+                    British, 'very expensive', black"
+-> `{'Mercedes': ['expensive', 'German', 'respectable'], 'Audi': ['sportive', 'German', 'technology-advanced'], 
+'VW': ['people', 'solid', 'No1'], 'Citroen': ['cool', 'Fantomas', 'CV2', 'elastic'], 'Rolls Rocye': ['royal', 'British', 'very expensive', 'black']}
+Map :{'Mercedes': 'expensive', 'Audi': 'sportive', 'VW': 'people', 'Citroen': 'cool', 'Rolls Rocye': 'royal'}`
+
 
 ## read_map
 Reads a comma separated list of mappings and returns a dictionary. 
@@ -50,7 +74,7 @@ Reads a comma separated list of mappings and returns a dictionary.
 ### Example
 text = "'Mercedes':expensive, Audi:'sportiv', VW : 'people', Citroen:cool, 'Rolls Rocye': royal"
 
--> {'Mercedes': 'expensive', 'Audi': 'sportiv', 'VW': 'people', 'Citroen': 'cool', 'Rolls Rocye': 'royal'}
+-> {'Mercedes': 'expensive', 'Audi': 'sportiv', 'VW': 'people', 'Citroen': 'cool', 'Rolls Rocye': 'royal'}`
 
 ## read_json
 Reads a json formatted string and return a dictionary 
@@ -64,7 +88,7 @@ Reads a json formatted string and return a dictionary
 ### Example
 json_text = "{\"Luxury Class\": {\"Mercedes\":\"expensive\",\"Rolls Rocye\": \"royal\"}, \"High Middle Class\":{\"Audi\":\"sportiv\"}, \"Middle Class\" : {\"Citroen\":\"cool\",\"VW\" : \"people\" }}"
 
--> {'Luxury Class': {'Mercedes': 'expensive', 'Rolls Rocye': 'royal'}, 'High Middle Class': {'Audi': 'sportiv'}, 'Middle Class': {'Citroen': 'cool', 'VW': 'people'}}
+-> `{'Luxury Class': {'Mercedes': 'expensive', 'Rolls Rocye': 'royal'}, 'High Middle Class': {'Audi': 'sportiv'}, 'Middle Class': {'Citroen': 'cool', 'VW': 'people'}} 
 
 ## read_comparisons
 Parses a list of comparisons and returns a list of lists with 3 items: (left, comparison-operator, right). There is an internal mapping of comparison characters: {'!=':'!','==':'=','>=':'≥','=>':'≥','<=':'≤','=<':'≤'} 
@@ -85,7 +109,7 @@ Default: {'!=': '!', '==': '=', '>=': '≥', '=>': '≥', '<=': '≤', '=<': '�
 
 ' anna > 1.70, norbert != 900, cindy <= 1.65' 
 
--> [['anna', '>', 1.7], ['norbert', '!', 900.0], ['cindy', '≤', 1.65]]
+-> [['anna', '>', 1.7], ['norbert', '!', 900.0], ['cindy', '≤', 1.65]]`
 
 
 

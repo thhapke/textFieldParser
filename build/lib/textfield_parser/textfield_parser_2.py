@@ -28,24 +28,8 @@ def read_list(text,value_list=None,sep = ',',modifier_list_not=None):
 
     return result_list
 
-#### READ VALUE LIST
-def read_value_lists(text,inner_sep = ',',outer_sep = ';',map_sep=':'):
-
-    text = text.strip()
-
-    vo_lists = [x.strip().strip("'").strip('"') for x in text.split(outer_sep)]
-
-    value_list_dict = dict()
-    for vo in vo_lists :
-        key, vi_str = vo.split(map_sep)
-        key = key.strip().strip("'").strip('"')
-        value_list_dict[key] = [x.strip().strip("'").strip('"') for x in vi_str.split(inner_sep)]
-
-    return value_list_dict
-
-
 #### READ MAP
-def read_maps(text,sep = ',',):
+def read_map(text,sep = ',',):
     list_maps = [x.strip() for x in text.split(sep)]
     return  {cm.split(':')[0].strip().strip("'").strip('"'): \
                    cm.split(':')[1].strip().strip("'").strip('"') for cm in list_maps}
@@ -56,10 +40,10 @@ def read_json(text) :
     return j
 
 #### READ Relation
-def read_relations(text,sep=',',relation_map=None):
+def read_relation(text,sep=',',relation_map=None):
 
     if not relation_map :
-        relation_map = {'!=': '!', '~':'!', '==': '=', '>=': '≥', '=>': '≥', '<=': '≤', '=<': '≤'}
+        relation_map = {'!=': '!', '==': '=', '>=': '≥', '=>': '≥', '<=': '≤', '=<': '≤'}
 
     for key,value in relation_map.items() :
         text = text.replace(key,value)
@@ -92,17 +76,9 @@ if __name__ == '__main__':
     print('All :' + str(read_list('All', list2)))
     print('List: ' + str(read_list(text)))
 
-    ### value lists
-    value_str = "'Mercedes':expensive, German, respectable; Audi:'sportive, German, technology-advanced'; \
-                    VW : 'people', 'solid', No1; Citroen:cool, Fantomas, CV2, elastic ; 'Rolls Rocye': royal,  \
-                    British, 'very expensive', black"
-
-    print('Value lists: ' + str(read_value_lists(value_str)))
-
-
     ### map
-    maplist = "'Mercedes':expensive, Audi:'sportive', VW : 'people', Citroen:cool, 'Rolls Rocye': royal"
-    print('Map :' + str(read_maps(maplist)))
+    maplist = "'Mercedes':expensive, Audi:'sportiv', VW : 'people', Citroen:cool, 'Rolls Rocye': royal"
+    print('Map :' + str(read_map(maplist)))
 
 
     ### json
@@ -113,4 +89,4 @@ if __name__ == '__main__':
 
     ### comparison
     comparison = ' anna > 1.70, norbert != 900, cindy <= 1.65'
-    print('Comparison: ' + str(read_relations(comparison)))
+    print('Comparison: ' + str(read_relation(comparison)))
