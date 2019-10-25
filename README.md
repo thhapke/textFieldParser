@@ -1,15 +1,23 @@
-# TextFieldParser
+# textfield_parser
 Getting a string from a textfield and returns the parsed content.  
 
 ## read_list
 Reads a comma separated list and returns either the items or the remainder of the additional list when a text contains the modifier 'Not'. 
 
-### Arguments
+def read_list(text,value_list=None,sep = ',', modifier_list = None)`
+
+
+### Arguments 
+
 * **text** -string- from textfield that will be parsed
 * **value_list** -list- list from which the parsed text elements will be removed when there is a modifier *'NOT'*. 
+* **sep** -char- element separator in string
+* **modifier_list** -list- List of modifier for excluding the listed items from value_list
+Default: ['!', '~', 'not', 'Not', 'NOT']
 
 ### Return
 * List of parsed parameters
+
 
 ### Examples
 
@@ -30,8 +38,11 @@ Reads a comma separated list and returns either the items or the remainder of th
 ## read_map
 Reads a comma separated list of mappings and returns a dictionary. 
 
+`def read_map(text, sep=',')`
+
 ### Arguments
 * **text** -string- from textfield that will be parsed
+* **sep** -char- element separator in string
 
 ### Return
 * dictionary of parsed parameters
@@ -58,8 +69,14 @@ json_text = "{\"Luxury Class\": {\"Mercedes\":\"expensive\",\"Rolls Rocye\": \"r
 ## read_comparisons
 Parses a list of comparisons and returns a list of lists with 3 items: (left, comparison-operator, right). There is an internal mapping of comparison characters: {'!=':'!','==':'=','>=':'≥','=>':'≥','<=':'≤','=<':'≤'} 
 
+`def read_comparisons(text,sep = ',',formula_map = None)`
+
 ### Arguments
 * **text** -string- Textfield string
+* **sep** -char- element separator in string
+* **modifier_map** -dictionary- mapping of comparison strings to 1-char comparison. 
+Default: {'!=': '!', '==': '=', '>=': '≥', '=>': '≥', '<=': '≤', '=<': '≤'}
+`
 
 ### Return
 * List of 3 element lists

@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="textfieldParser",
-    version="0.0.2",
+    name="textfield_parser",
+    version="0.0.5",
     author="Thorsten Hapke",
     author_email="thorsten.hapke@sap.com",
     description="Parsing Textfields",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/thhapke/textfieldParser",
+    url="https://github.com/thhapke/textfield_parser",
     keywords = ['textfield parsing'],
     packages=setuptools.find_packages(),
     install_requires=[],
