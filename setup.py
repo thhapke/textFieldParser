@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="textfield_parser",
-    version="0.0.9",
+    version="0.0.28",
     author="Thorsten Hapke",
     author_email="thorsten.hapke@sap.com",
     description="Parsing Textfields",
