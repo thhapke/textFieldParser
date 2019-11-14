@@ -140,7 +140,7 @@ def read_relations(text,sep=',',relation_map=None):
 
     relation_list = list()
     for selection in text_list:
-        m = re.match(u'(.+)\s*([<>!≤≥]+)\s*(.+)', selection)
+        m = re.match(u'(.+)\s*([<>!≤≥=]+)\s*(.+)', selection)
         if m:
             left = m.group(1).strip().strip('"').strip("'")
             right = float(m.group(3).strip())

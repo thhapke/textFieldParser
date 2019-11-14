@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: textfield-parser
-Version: 0.0.28
+Version: 0.0.29
 Summary: Parsing Textfields
 Home-page: https://github.com/thhapke/textfield_parser
 Author: Thorsten Hapke
@@ -117,8 +117,6 @@ Description: # textfield_parser
         
         ## read\_dict\_of\_dict
         Reads a dictionary of dictionaries and returns a dictory with a 2-level hierarchy.
-        
-        Remark: In the case that the 2nd level dictionaries only have one value the *out_sep* separator is not needed. In this case the *out_sep* is replaced by *sep* because quite often it has lead to an error because the wrong separator has been used. 
         
         `def read_dict_of_dict(text, sep=',', map_sep=':', outer_sep = ';', test_number = True)`
         
