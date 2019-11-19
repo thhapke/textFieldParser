@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="578831d2-d084-4559-962b-0375c534a461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/textfield_parser/textfield_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/textfield_parser/textfield_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/textfield_parser-0.0.27-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/textfield_parser-0.0.27.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/textfield_parser-0.0.28-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/textfield_parser-0.0.28.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/textfield_parser.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/textfield_parser.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/textfield_parser/textfield_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/textfield_parser/textfield_parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +118,8 @@
       <workItem from="1572267876301" duration="3544000" />
       <workItem from="1572410357795" duration="1275000" />
       <workItem from="1573542454816" duration="1578000" />
+      <workItem from="1573974533344" duration="353000" />
+      <workItem from="1573975842746" duration="742000" />
     </task>
     <servers />
   </component>
